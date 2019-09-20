@@ -8,10 +8,28 @@
     var home = (Home)Model.Root();
     var font = home.Font;
     var colorTheme = home.ColorTheme;
-     Html.RequiresJs("~/scripts/umbraco-starterkit-app.js", 1);
+
    
 
-    Html.RequiresCss("~/css/umbraco-starterkit-style.css");
+
+   
+      Html.RequiresJs("~/scripts/jquery-3.3.1.js", 1);
+     Html.RequiresJs("~/scripts/bootstrap.bundle.js", 2);
+     Html.RequiresJs("~/scripts/loaders.css.js", 3);
+     Html.RequiresJs("~/scripts/aos.js", 4);
+     Html.RequiresJs("~/scripts/swiper.min.js", 5);
+     Html.RequiresJs("~/scripts/lightgallery-all.min.js", 6);
+      Html.RequiresJs("~/scripts/main.js", 7);
+   
+    Html.RequiresCss("~/css/loader/loaders.css");
+    Html.RequiresCss("~/css/font-awesome/font-awesome.css");
+    Html.RequiresCss("~/css/bootstrap.css");
+    Html.RequiresCss("~/css/aos/aos.css");
+    Html.RequiresCss("~/css/swiper/swiper.css");
+    Html.RequiresCss("~/css/lightgallery.min.css");
+    Html.RequiresCss("~/css/style.css");
+    Html.RequiresCss("~/css/responsive.css");
+
 }
 
 <!doctype html>
@@ -23,46 +41,79 @@
     <title>@Model.Name - @home.Sitename</title>
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
-     @Html.RenderCssHere()
+    <!-- Stylesheets & Fonts -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i%7CRajdhani:400,600,700" rel="stylesheet">
+    @Html.RenderCssHere()
     @RenderSection("Header", required: false)
 </head>
 
-<body class="frontpage theme-font-@font theme-color-@colorTheme">
-    <div class="mobile-nav">
-        <nav class="nav-bar">
-            @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")
-        </nav>
+<body>
+    <!-- Loader Start -->
+    <div class="css-loader">
+        <div class="loader-inner line-scale d-flex align-items-center justify-content-center"></div>
     </div>
-
-    <header class="header">
-
-        <div class="logo">
-            @if (home.SiteLogo != null && !string.IsNullOrEmpty(home.SiteLogo.Url))
-            {
-                <div class="nav-link--home">
-                    <img class="logo-image" src="@home.SiteLogo.Url" alt="@home.Sitename">
+    <!-- Loader End -->
+    <!-- Header Start -->
+    <header class="position-absolute w-100">
+        <div class="container">
+            <div class="top-header d-none d-sm-flex justify-content-between align-items-center">
+                <div class="contact">
+                    <a href="tel:+1234567890" class="tel"><i class="fa fa-phone" aria-hidden="true"></i>+1234567890</a>
+                    <a href="mailto:info@yourmail.com">
+                        <i class="fa fa-envelope"
+                           aria-hidden="true"></i>info@yourmail.com
+                    </a>
                 </div>
-            }
-            else
-            {
-                <a class="nav-link nav-link--home nav-link--home__text logo-text" href="/">@home.Sitename</a>
-            }
-        </div>
-
-        <nav class="nav-bar top-nav">
-            @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
-        </nav>
-
-        <div class="mobile-nav-handler">
-            <div class="hamburger lines" id="toggle-nav">
-                <span></span>
+                <nav class="d-flex aic">
+                    <a href="#" class="login"><i class="fa fa-user" aria-hidden="true"></i>Login</a>
+                    <ul class="nav social d-none d-md-flex">
+                        <li><a href="https://www.facebook.com/fh5co" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </nav>
             </div>
-        </div>
+            <nav class="navbar navbar-expand-md navbar-light">
 
-    </header>
+                @if (home.SiteLogo != null && !string.IsNullOrEmpty(home.SiteLogo.Url))
+                {
+                    <a class="navbar-brand" href="/"><img src="@home.SiteLogo.Url" alt="@home.Sitename"></a>
+                }
+                else
+                {
+                    <a class="navbar-brand" href="/">@home.Sitename</a>
+                }
 
+                <div class="group d-flex align-items-center">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="login-icon d-sm-none" href="#"><i class="fa fa-user"></i></a>
+                    <a class="cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                </div>
+                <a class="search-icon d-none d-md-block" href="#"><i class="fa fa-search"></i></a>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                   
+                    <ul class="navbar-nav">
+                        @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
+                    </ul>
+                    <form class="bg-white search-form" method="get" id="searchform">
+                        <div class="input-group">
+                            <input class="field form-control" id="s" name="s" type="text" placeholder="Search">
+                            <span class="input-group-btn">
+                                <input class="submit btn btn-primary" id="searchsubmit" name="submit" type="submit"
+                                       value="Search">
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+            </div>
+</header>
+    <!-- Header End -->
     <main>
         @RenderBody()
     </main>
@@ -76,14 +127,14 @@
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+    @Html.RenderJsHere()
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    @Html.RenderJsHere()
- 
-    
- 
+
+
+
+
 </body>
 
 </html>
