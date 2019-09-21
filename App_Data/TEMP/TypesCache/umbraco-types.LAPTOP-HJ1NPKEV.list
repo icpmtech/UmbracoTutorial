@@ -579,6 +579,7 @@ Umbraco.Web.HealthCheck.NotificationMethods.EmailNotificationMethod, Umbraco.Web
 
 Umbraco.Core.Models.PublishedContent.PublishedElementModel
 
+Umbraco.Web.PublishedModels.BannerArea, UmbacoTutorial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.CarouselSlide, UmbacoTutorial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.DisableControls, UmbacoTutorial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Feature, UmbacoTutorial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -599,6 +600,7 @@ Umbraco.Web.PublishedModels.EventItem, UmbacoTutorial, Version=1.0.0.0, Culture=
 Umbraco.Web.PublishedModels.File, UmbacoTutorial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Folder, UmbacoTutorial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Home, UmbacoTutorial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.PublishedModels.HomePortfolio, UmbacoTutorial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Image, UmbacoTutorial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Member, UmbacoTutorial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.NavigationBase, UmbacoTutorial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null

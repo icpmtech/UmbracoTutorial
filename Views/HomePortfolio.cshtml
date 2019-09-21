@@ -1,0 +1,7 @@
+﻿@{
+    Layout = "master.cshtml";
+}
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePortfolio>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@*//Homme Banner*@
+@Html.CachedPartial("Partials/_BannerCarousel", Model, 3600)
